@@ -197,23 +197,72 @@ $\tanh(x)$ & $\operatorname{sech}^2(x)$ \\
 \caption{Hyperbolic derivatives}
 \end{table}
 
-\subsection{Hyperbolic Derivatives}
+\subsection{Absolute Value and Piecewise Derivatives}
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{@{} l c @{} }
+\begin{tabular}{@{} l c l @{} }
 \toprule
-Function & Derivative \\
+Function & Derivative & Notes \\
 \midrule
-$\sinh(x)$ & $\cosh(x)$ \\
-$\cosh(x)$ & $\sinh(x)$ \\
-$\tanh(x)$ & $\operatorname{sech}^2(x)$ \\
+$|x|$ & $\operatorname{sgn}(x)$ & Undefined at $x = 0$ \\
+$\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ & Domain: $x > 0$ \\
+$\sqrt[n]{x}$ & $\dfrac{1}{n\sqrt[n]{x^{n-1}}}$ & For positive integer $n$ \\
 \bottomrule
 \end{tabular}
-\caption{Hyperbolic derivatives}
+\caption{Absolute value and root derivatives}
 \end{table}
 
-\subsection{Summary Table: All Common Derivatives}
+\textbf{Explanation:}
+\begin{itemize}
+  \item The derivative of $|x|$ is the sign function $\operatorname{sgn}(x) = \begin{cases} -1 & x < 0 \\ 0 & x = 0 \\ 1 & x > 0 \end{cases}$
+  \item For square root: $\dfrac{d}{dx}(\sqrt{x}) = \dfrac{1}{2\sqrt{x}} = \dfrac{1}{2}x^{-1/2}$ (using power rule with $n = 1/2$)
+  \item For $n$-th roots, use the power rule: $\dfrac{d}{dx}(x^{1/n}) = \dfrac{1}{n}x^{(1/n)-1}$
+\end{itemize}
+
+\subsection{Composition Rules for Derivatives}
+
+When derivatives are combined, we use the following composition rules:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{} l c l @{} }
+\toprule
+Rule & Formula & Example \\
+\midrule
+Sum Rule & $(u + v)' = u' + v'$ & $\dfrac{d}{dx}(x^2 + \sin x) = 2x + \cos x$ \\
+\midrule
+Difference Rule & $(u - v)' = u' - v'$ & $\dfrac{d}{dx}(e^x - x^3) = e^x - 3x^2$ \\
+\midrule
+Constant Multiple & $(cu)' = cu'$ & $\dfrac{d}{dx}(5\cos x) = -5\sin x$ \\
+\midrule
+Product Rule & $(uv)' = u'v + uv'$ & $\dfrac{d}{dx}(x \cdot e^x) = e^x + xe^x$ \\
+\midrule
+Quotient Rule & $\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$ & $\dfrac{d}{dx}\left(\dfrac{\sin x}{x}\right) = \dfrac{x\cos x - \sin x}{x^2}$ \\
+\midrule
+Chain Rule & $(f \circ g)' = f'(g) \cdot g'$ & $\dfrac{d}{dx}(\sin(x^2)) = 2x\cos(x^2)$ \\
+\bottomrule
+\end{tabular}
+\caption{Composition and combination rules for derivatives}
+\end{table}
+
+\subsection{Practical Tips for Computing Derivatives}
+
+\begin{enumerate}
+  \item \textbf{Identify the structure:} Determine if the function is a sum, product, quotient, or composition.
+  \item \textbf{Apply the appropriate rule:} Use sum, product, quotient, or chain rule as needed.
+  \item \textbf{Use tables:} Refer to the common derivatives table for basic functions.
+  \item \textbf{Simplify:} Always simplify the final answer by combining like terms and factoring when possible.
+  \item \textbf{Check domain restrictions:} Remember where derivatives may be undefined (e.g., $\ln(x)$ only for $x > 0$).
+\end{enumerate}
+
+\textbf{Common mistakes to avoid:}
+\begin{itemize}
+  \item Forgetting to apply the chain rule to composite functions
+  \item Misapplying the product rule (it's $u'v + uv'$, not $(u'v)'$ or $(uv')'$)
+  \item Ignoring domain restrictions of the original function
+  \item Forgetting constant factors in the numerator of quotient rule results
+\end{itemize}
 
 \begin{table}[h!]
 \centering
